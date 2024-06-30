@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = bytebank_ATENDIMENTO
-build_property.ProjectDir = /Users/fabriciofelix/Downloads/Array_Collections_C-aula01/bytebank_ATENDIMENTO/
+build_property.ProjectDir = C:\Users\Fabricio\RiderProjects\bytebank_ATENDIMENTO\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
