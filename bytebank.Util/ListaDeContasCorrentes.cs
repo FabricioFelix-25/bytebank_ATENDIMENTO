@@ -1,3 +1,4 @@
+using System.Net.Security;
 using bytebank.Modelos.Conta;
 
 namespace bytebank_ATENDIMENTO.bytebank.Util;
@@ -38,5 +39,45 @@ public class ListaDeContasCorrentes
         }
 
         _itens = novoArray;
+    }
+
+    public void Remover(ContaCorrente conta)
+    {
+        int indiceItem = 1;
+        for (int i = 0; i < _proximaPosicao; i++)
+        {
+            ContaCorrente contaAtual = _itens[i];
+            if (contaAtual == conta)
+            {
+                indiceItem = i;
+                break;
+            }
+            
+        }
+
+        for (int i = indiceItem; i < _proximaPosicao - 1; i++)
+        {
+            _itens[i] = _itens[i + 1];
+            
+        }
+
+        _proximaPosicao--;
+        _itens[_proximaPosicao] = null;
+    }
+    
+    // código anterior omitido
+
+    public void ExibeLista()
+    {
+        for (int i = 0; i < _itens.Length; i++)
+        {
+            if (_itens[i] != null)
+            {
+                var conta = _itens[i];
+                Console.WriteLine($" Indice[{i}] = " +
+                                  $"Conta:{conta.Conta} - " +
+                                  $"N° da Agência: {conta.Numero_agencia}");
+            }
+        }
     }
 }

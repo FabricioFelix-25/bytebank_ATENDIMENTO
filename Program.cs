@@ -89,6 +89,19 @@ void TestaMediana(Array array)
 
 // código anterior omitido
 
+// void TestaArrayDeContasCorrentes()
+// {
+//
+//     ListaDeContasCorrentes listaDeContas = new ListaDeContasCorrentes();
+//     listaDeContas.Adicionar(new ContaCorrente(874, "5679787-A"));
+//     listaDeContas.Adicionar(new ContaCorrente(874, "4456668-B"));
+//     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
+//     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
+//     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
+//     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
+//
+// }
+
 void TestaArrayDeContasCorrentes()
 {
 
@@ -99,6 +112,13 @@ void TestaArrayDeContasCorrentes()
     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
     listaDeContas.Adicionar(new ContaCorrente(874, "7781438-C"));
+    listaDeContas.Adicionar(new ContaCorrente(874, "8844579-k"));
+    var contaDoAndre = new ContaCorrente(963, "123456-X");
+    listaDeContas.Adicionar(contaDoAndre);
+    listaDeContas.ExibeLista();
+    Console.WriteLine("============");
+    listaDeContas.Remover(contaDoAndre);
+    listaDeContas.ExibeLista();
 
 }
 
