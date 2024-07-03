@@ -115,11 +115,15 @@ void TestaArrayDeContasCorrentes()
     listaDeContas.Adicionar(new ContaCorrente(874, "8844579-k"));
     var contaDoAndre = new ContaCorrente(963, "123456-X");
     listaDeContas.Adicionar(contaDoAndre);
-    listaDeContas.ExibeLista();
-    Console.WriteLine("============");
-    listaDeContas.Remover(contaDoAndre);
-    listaDeContas.ExibeLista();
-
+    // listaDeContas.ExibeLista();
+    // Console.WriteLine("============");
+    // listaDeContas.Remover(contaDoAndre);
+    // listaDeContas.ExibeLista();
+    for (int i = 0; i < listaDeContas.Tamanho; i++)
+    {
+        ContaCorrente conta = listaDeContas[i];
+        Console.WriteLine($"indice [{i}] = {conta.Conta}/{conta.Numero_agencia}");
+    }
 }
 
 
