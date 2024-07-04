@@ -65,7 +65,7 @@ public class ListaDeContasCorrentes
         _itens[_proximaPosicao] = null;
     }
     
-    // código anterior omitido
+   
 
     public void ExibeLista()
     {
@@ -81,7 +81,7 @@ public class ListaDeContasCorrentes
         }
     }
 
-    // código anterior omitido
+    
 
         public ContaCorrente RecuperarContaNoIndice(int indice)
         {
