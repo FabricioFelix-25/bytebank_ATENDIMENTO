@@ -140,7 +140,12 @@ void TestaArrayDeContasCorrentes()
 #endregion Exemplos em c#
 
 
-ArrayList _ListaDeContas = new ArrayList();
+List<ContaCorrente> _ListaDeContas = new List<ContaCorrente>()
+{
+    new ContaCorrente(95, "1234567-x") { Saldo = 100 },
+    new ContaCorrente(95, "1234567-x") { Saldo = 1000 },
+    new ContaCorrente(95, "1234567-x") { Saldo = 2200 },
+};
 AtendimentoCliente();
 void AtendimentoCliente()
 {
@@ -196,6 +201,7 @@ void ListarContas()
     {
         Console.WriteLine("=== Dados ====");
         Console.WriteLine("Numero da conta: " + item.Conta);
+        Console.WriteLine("Saldo na conta: " + item.Saldo);
         Console.WriteLine("Titular da conta: " + item.Conta);
         Console.WriteLine("CPF: " + item.Conta);
         Console.WriteLine("Profissao: " + item.Conta);
@@ -235,6 +241,16 @@ void CadastrarConta()
     conta.Titular.Profissao = Console.ReadLine();
 
     _ListaDeContas.Add(conta);
+    
+    
     Console.WriteLine("... Conta cadastrada com sucesso! ...");
     Console.ReadKey();
+}
+
+public class Generia<T>
+{
+    public void MostrarMensagem(T t)
+    {
+        Console.WriteLine($"exibindo {t}");
+    }
 }
