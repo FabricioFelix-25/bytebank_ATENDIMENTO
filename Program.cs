@@ -146,7 +146,7 @@ List<ContaCorrente> _ListaDeContas = new List<ContaCorrente>()
     new ContaCorrente(95, "1234567-x") { Saldo = 1000 },
     new ContaCorrente(95, "1234567-x") { Saldo = 2200 },
 };
-AtendimentoCliente();
+//AtendimentoCliente();
 void AtendimentoCliente()
 {
     char opcao = '0';
@@ -247,10 +247,56 @@ void CadastrarConta()
     Console.ReadKey();
 }
 
-public class Generia<T>
+
+// Generica<int> teste1 = new Generica<int>();
+// teste1.MostrarMensagem(10);
+//
+// Generica<string> teste2 = new Generica<string>();
+// teste2.MostrarMensagem("ola mundo");
+//
+//
+// public class Generica<T>
+// {
+//     public void MostrarMensagem(T t)
+//     {
+//         Console.WriteLine($"exibindo {t}");
+//     }
+// }
+
+List<ContaCorrente> _listaDeContas2 = new List<ContaCorrente>()
 {
-    public void MostrarMensagem(T t)
-    {
-        Console.WriteLine($"exibindo {t}");
-    }
+    new ContaCorrente(874, "5679787-A"),
+    new ContaCorrente(874, "4456668-B"),
+    new ContaCorrente(874, "7781438-C")
+};
+
+List<ContaCorrente> _listaDeContas3 = new List<ContaCorrente>()
+{
+    new ContaCorrente(951, "5679787-E"),
+    new ContaCorrente(321, "4456668-F"),
+    new ContaCorrente(719, "7781438-G")
+};
+
+
+_listaDeContas2.AddRange(_listaDeContas3);
+_listaDeContas2.Reverse();
+
+for (int i = 0; i < _listaDeContas2.Count; i++)
+{
+    Console.WriteLine($"Indice[{i}] = Conta [{_listaDeContas2[i].Conta}]");
+}
+
+Console.WriteLine("\n\n");
+
+var range = _listaDeContas3.GetRange(0, 1);
+for (int i = 0; i < range.Count; i++)
+{
+    Console.WriteLine($"indice[{i}] = conta [{range[i].Conta}]");
+}
+Console.WriteLine("\n\n");
+
+ _listaDeContas3.Clear();
+for (int i = 0; i < _listaDeContas3.Count; i++)
+{
+    Console.WriteLine($"indice[{i}] = conta [{range[i].Conta}]");
 }
