@@ -237,8 +237,6 @@ void AtendimentoCliente()
                 throw new ByteBankException(execao.Message);
             }
             
-            
-            opcao = Console.ReadLine()[0];
             switch (opcao)
             {
                 case '1':
@@ -246,6 +244,9 @@ void AtendimentoCliente()
                     break;
                 case '2':
                     ListarContas();
+                    break;
+                case '3':
+                    RemoverContas();
                     break;
             
                 default:
@@ -260,10 +261,44 @@ void AtendimentoCliente()
         Console.WriteLine($"{execao.Message}");
         ;
     }
-    
-    
-    
 }
+
+void RemoverContas()
+{
+    Console.Clear();
+    Console.WriteLine("============================");
+    Console.WriteLine("===   Remover Contas   =====");
+    Console.WriteLine("============================");
+    Console.WriteLine("\n");
+    Console.Write("informe o numero da conta: ");
+    string numeroConta = Console.ReadLine();
+    ContaCorrente conta = null;
+    foreach (var item in _ListaDeContas)
+    {
+        if (item.Conta.Equals(numeroConta))
+        {
+            conta = item;
+            
+        }
+    }
+
+    if (conta != null)
+    {
+        _ListaDeContas.Remove(conta);
+        Console.WriteLine("... conta removida da lista ...");
+        
+        
+    }
+    else
+    {
+        Console.WriteLine(".. conta para remoção não encontrada ...");
+    }
+
+    Console.ReadKey();
+
+
+}
+
 
 
 void ListarContas()
