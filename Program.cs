@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Threading.Channels;
 using bytebank_ATENDIMENTO.bytebank.Exceptions;
 using bytebank_ATENDIMENTO.bytebank.Util;
 using bytebank.Modelos.Conta;
@@ -248,6 +249,9 @@ void AtendimentoCliente()
                 case '3':
                     RemoverContas();
                     break;
+                case '4':
+                    OrdenarContas();
+                    break;
             
                 default:
                     Console.WriteLine("Opcao não implementada.");
@@ -262,6 +266,15 @@ void AtendimentoCliente()
         ;
     }
 }
+
+
+void OrdenarContas()
+{
+   _ListaDeContas.Sort();
+   Console.WriteLine("... LISTA DE CONTAS ORDENADA ...");
+   Console.ReadKey();
+}
+
 
 void RemoverContas()
 {
