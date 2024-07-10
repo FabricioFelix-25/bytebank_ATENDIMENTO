@@ -334,16 +334,14 @@ void PesquisarContas()
 
 
 
-object ConsultaPorAgencia(int numeroAgencia)
-{
-    var consulta =
-    (
-        from conta in _ListaDeContas
-        where conta.Numero_agencia == numeroAgencia
-        select conta).ToList();
-    return consulta;
-
-}
+  List<ContaCorrente> ConsultaPorAgencia(int numeroAgencia)
+ {
+     var consulta = (
+         from conta in _ListaDeContas
+         where conta.Numero_agencia == numeroAgencia
+         select conta).ToList();
+     return consulta;
+ }
 
 ContaCorrente ConsultaPorCPFTitular(string? cpf)
 {
