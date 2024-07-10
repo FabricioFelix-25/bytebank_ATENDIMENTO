@@ -278,7 +278,7 @@ void PesquisarContas()
     Console.WriteLine("===    PESQUISAR CONTAS     ===");
     Console.WriteLine("===============================");
     Console.WriteLine("\n");
-    Console.Write("Deseja pesquisar por (1) NUMERO DA CONTA ou (2)CPF TITULAR ? ");
+    Console.Write("Deseja pesquisar por (1) NUMERO DA CONTA ou (2)CPF TITULAR ou  (3) AGENCIA? ");
     switch (int.Parse(Console.ReadLine()))
     {
         case 1:
@@ -299,6 +299,15 @@ void PesquisarContas()
             Console.ReadKey();
             break;
         }
+        case 3:
+        {
+            Console.Write("Informe o Nº da Agência: ");
+            int _numeroAgencia = int.Parse(Console.ReadLine());
+            var contasPorAgencia = ConsultaPorAgencia(_numeroAgencia);
+            ExibirListaDeContas(contasPorAgencia);
+            Console.ReadKey();
+            break;
+        }
         default:
             Console.WriteLine("Opção não implementada.");
             break;
@@ -306,35 +315,68 @@ void PesquisarContas()
 
 }
 
-ContaCorrente ConsultaPorCPFTitular(string? cpf)
+
+ void ExibirListaDeContas(List<ContaCorrente> contasPorAgencia)
 {
-    ContaCorrente conta = null;
-    for (int i = 0; i < _ListaDeContas.Count; i++)
+    if (contasPorAgencia == null)
     {
-        if (_ListaDeContas[i].Titular.Cpf.Equals(cpf))
+        Console.WriteLine(" ... A consulta não retornou dados ...");
+    }
+    else
+    {
+        foreach (var item in contasPorAgencia)
         {
-            conta = _ListaDeContas[i];
-            
+            Console.WriteLine(item.ToString());
         }
     }
+}
 
-    return conta;
+
+
+
+object ConsultaPorAgencia(int numeroAgencia)
+{
+    var consulta =
+    (
+        from conta in _ListaDeContas
+        where conta.Numero_agencia == numeroAgencia
+        select conta).ToList();
+    return consulta;
+
+}
+
+ContaCorrente ConsultaPorCPFTitular(string? cpf)
+{
+    // ContaCorrente conta = null;
+    // for (int i = 0; i < _ListaDeContas.Count; i++)
+    // {
+    //     if (_ListaDeContas[i].Titular.Cpf.Equals(cpf))
+    //     {
+    //         conta = _ListaDeContas[i];
+    //         
+    //     }
+    // }
+//
+    // return conta;
+   return _ListaDeContas.Where(conta => conta.Titular.Cpf == cpf).FirstOrDefault();
 }
 
 
 ContaCorrente ConsultaPorNumeroConta(string? numeroConta)
 {
-    ContaCorrente conta = null;
-    for (int i = 0; i < _ListaDeContas.Count; i++)
-    {
-        if (_ListaDeContas[i].Conta.Equals(numeroConta))
-        {
-            conta = _ListaDeContas[i];
-            
-        }
-    }
-
-    return conta;
+    // ContaCorrente conta = null;
+    // for (int i = 0; i < _ListaDeContas.Count; i++)
+    // {
+    //     if (_ListaDeContas[i].Conta.Equals(numeroConta))
+    //     {
+    //         conta = _ListaDeContas[i];
+    //         
+    //     }
+    // }
+    //
+    // return conta;
+    
+    return _ListaDeContas.Where(conta => conta.Titular.Cpf == numeroConta).FirstOrDefault();
 }
 
 
@@ -388,7 +430,7 @@ void ListarContas()
 {
     Console.Clear();
     Console.WriteLine("=======================");
-    Console.WriteLine("===     lista de contas  ===");
+    Console.WriteLine("=== lista de contas ===");
     Console.WriteLine("=======================");
     Console.WriteLine("\n");
 
@@ -401,12 +443,13 @@ void ListarContas()
 
     foreach (ContaCorrente item in _ListaDeContas)
     {
-        Console.WriteLine("=== Dados ====");
-        Console.WriteLine("Numero da conta: " + item.Conta);
-        Console.WriteLine("Saldo na conta: " + item.Saldo);
-        Console.WriteLine("Titular da conta: " + item.Conta);
-        Console.WriteLine("CPF: " + item.Conta);
-        Console.WriteLine("Profissao: " + item.Conta);
+        // Console.WriteLine("=== Dados ====");
+        // Console.WriteLine("Numero da conta: " + item.Conta);
+        // Console.WriteLine("Saldo na conta: " + item.Saldo);
+        // Console.WriteLine("Titular da conta: " + item.Conta);
+        // Console.WriteLine("CPF: " + item.Conta);
+        // Console.WriteLine("Profissao: " + item.Conta);
+        Console.WriteLine(item.ToString());
         Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
         Console.ReadKey();
         
