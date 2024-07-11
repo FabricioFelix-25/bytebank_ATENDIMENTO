@@ -105,6 +105,14 @@
 
 		}
 
+		public ContaCorrente(int numero_agencia)
+		{
+			Numero_agencia = numero_agencia;
+			Conta = Guid.NewGuid().ToString().Substring(0, 8);
+			Titular = new Cliente();
+			TotalDeContasCriadas += 1;
+		}
+
 		public int CompareTo(ContaCorrente? outro)
 		{
 			if(outro == null)
