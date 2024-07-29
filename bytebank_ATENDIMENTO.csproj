@@ -11,4 +11,12 @@
     <Compile Remove="bytebank.Excptions.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="bytebank_Modelos" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bytebank_Modelos.csproj" />
+  </ItemGroup>
+
 </Project>

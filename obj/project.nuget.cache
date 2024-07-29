@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "4hVVkVi6HuydDIn0G+NsOi5HK77F3C/HknZ4P7NqO55K1EBcIMIEHam+6GDWbzkC1Z75ICNPD0eMgCaaohKK9g==",
+  "dgSpecHash": "EPUg8vCwtr7Ojfg2sXLolMnsl7uKH1aTmNPe4BHdpp54Vgm8kELvBQVpcvLE9vHJmr5iftAVuNLThpb5nsW+zA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Fabricio\\RiderProjects\\bytebank_ATENDIMENTO\\bytebank_ATENDIMENTO.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/Users/fabriciofelix/RiderProjects/bytebank_ATENDIMENTO/bytebank_ATENDIMENTO.csproj",
+  "expectedPackageFiles": [
+    "/Users/fabriciofelix/.nuget/packages/microsoft.netcore.app.ref/6.0.30/microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
+    "/Users/fabriciofelix/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.30/microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512",
+    "/Users/fabriciofelix/.nuget/packages/microsoft.netcore.app.host.osx-x64/6.0.30/microsoft.netcore.app.host.osx-x64.6.0.30.nupkg.sha512"
+  ],
   "logs": []
 }

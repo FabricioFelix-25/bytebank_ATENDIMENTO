@@ -8,27 +8,24 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Fabricio\\.nuget\\packages\\": {}
+    "/Users/fabriciofelix/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Fabricio\\RiderProjects\\bytebank_ATENDIMENTO\\bytebank_ATENDIMENTO.csproj",
+      "projectUniqueName": "/Users/fabriciofelix/RiderProjects/bytebank_ATENDIMENTO/bytebank_ATENDIMENTO.csproj",
       "projectName": "bytebank_ATENDIMENTO",
-      "projectPath": "C:\\Users\\Fabricio\\RiderProjects\\bytebank_ATENDIMENTO\\bytebank_ATENDIMENTO.csproj",
-      "packagesPath": "C:\\Users\\Fabricio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Fabricio\\RiderProjects\\bytebank_ATENDIMENTO\\obj\\",
+      "projectPath": "/Users/fabriciofelix/RiderProjects/bytebank_ATENDIMENTO/bytebank_ATENDIMENTO.csproj",
+      "packagesPath": "/Users/fabriciofelix/.nuget/packages/",
+      "outputPath": "/Users/fabriciofelix/RiderProjects/bytebank_ATENDIMENTO/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Fabricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/fabriciofelix/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -57,12 +54,26 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.30, 6.0.30]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.osx-x64",
+            "version": "[6.0.30, 6.0.30]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.30, 6.0.30]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/fabriciofelix/.dotnet/sdk/8.0.300/RuntimeIdentifierGraph.json"
       }
     }
   }
