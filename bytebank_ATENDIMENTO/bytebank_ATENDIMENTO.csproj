@@ -15,4 +15,8 @@
     <None Remove="bytebank_Modelos" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\bytebank_Modelos\bytebank_Modelos.csproj" />
+  </ItemGroup>
+
 </Project>
