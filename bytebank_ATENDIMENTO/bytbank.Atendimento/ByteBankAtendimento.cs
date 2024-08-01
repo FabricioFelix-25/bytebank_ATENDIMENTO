@@ -2,6 +2,7 @@
 using bytebank_ATENDIMENTO.bytebank.Exceptions;
 using bytebank.Modelos.Conta;
 using Newtonsoft.Json;
+using System.Xml.Serialization;
 
 namespace bytebank_ATENDIMENTO.bytbank.Atendimento;
 
@@ -22,7 +23,7 @@ public void AtendimentoCliente()
     try
     {
         char opcao = '0';
-        while (opcao != '7')
+        while (opcao != '8')
         {
             Console.Clear();
             Console.WriteLine("===============================");
@@ -33,7 +34,8 @@ public void AtendimentoCliente()
             Console.WriteLine("===4 - Ordenar Contas       ===");
             Console.WriteLine("===5 - Pesquisar Conta      ===");
             Console.WriteLine("===6 - Exportar Contas      ===");
-            Console.WriteLine("===7 - Sair do Sistema      ===");
+            //Console.WriteLine("===7 - Exportar em XML      ===");
+            Console.WriteLine("===8 - Sair do Sistema      ===");
             Console.WriteLine("===============================");
             Console.WriteLine("\n\n");
             Console.Write("Digite a opção desejada: ");
@@ -66,9 +68,12 @@ public void AtendimentoCliente()
                 case '6':
                     ExportarContas();
                     break;
-                 case '7':
-                    EncerrarAplicacao();
-                    break;
+                 //case '7':
+                 //   ExportarContasEmXML();
+                 //   break;
+                 case '8':
+                     EncerrarAplicacao();
+                     break;
 
                     default:
                     Console.WriteLine("Opcao não implementada.");
@@ -83,6 +88,43 @@ public void AtendimentoCliente()
         ;
     }
 }
+
+    //private void ExportarContasEmXML()
+    //{
+    //    Console.Clear();
+    //    Console.WriteLine("===============================");
+    //    Console.WriteLine("===     EXPORTAR CONTAS XML ===");
+    //    Console.WriteLine("===============================");
+    //    Console.WriteLine("\n");
+
+    //    if (_ListaDeContas.Count <= 0)
+    //    {
+    //        Console.WriteLine("... Não existe dados para exportação...");
+    //        Console.ReadKey();
+    //    }
+    //    else
+    //    {
+    //        //Serializar para XML
+    //        var contasXML = new XmlSerializer(typeof(List<ContaCorrente>));
+
+    //        try
+    //        {
+    //            FileStream fs = new FileStream(@"c:\temp\export\contas.xml", FileMode.Create);
+    //            using (StreamWriter streamwriter = new StreamWriter(fs))
+    //            {
+    //                contasXML.Serialize(streamwriter, _ListaDeContas);
+    //            }
+    //            Console.WriteLine(@"Arquivo salvo em c:\temp\export\");
+    //            Console.ReadKey();
+    //        }
+    //        catch (Exception excecao)
+    //        {
+    //            throw new ByteBankException(excecao.Message);
+    //            Console.ReadKey();
+    //        }
+
+    //    }
+    //}
 
     private void ExportarContas()
     {
@@ -342,5 +384,6 @@ void CadastrarConta()
     Console.WriteLine("... Conta cadastrada com sucesso! ...");
     Console.ReadKey();
 }
+    
 
 }
